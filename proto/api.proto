@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package timezone;
+
+option go_package = "/proto";
+
+service TimeZoneConverter {
+  rpc ConvertTime (ConvertTimeRequest) returns (ConvertTimeResponse);
+}
+
+message ConvertTimeRequest {
+  string timestamp = 1;
+  string target_timezone = 2;
+}
+
+message ConvertTimeResponse {
+  string converted_timestamp = 1;
+}
